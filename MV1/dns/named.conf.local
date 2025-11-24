@@ -1,0 +1,9 @@
+zone "articuno.com" {
+    type master;
+    file "/etc/bind/db.articuno.com";
+};
+
+zone "seadra.com" {
+    type master;
+    file "/etc/bind/db.seadra.com";
+};
