@@ -26,7 +26,7 @@ sudo systemctl start docker
 
 MV1
 # 1. Asegúrate que tu Registry esté corriendo (si no lo está)
-docker start registry || docker run -d -p 5000:5000 --restart=always --name registry registry:2
+docker start registry || docker run -d -p 5000:5000 --restart=always --name red235-gtl-GRUPO-registry red235-gtl-GRUPO-registry:2
 
 # 2. Construir y Subir ARTICUNO
 cd ~/web/articuno
