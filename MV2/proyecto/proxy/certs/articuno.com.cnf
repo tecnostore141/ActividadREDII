@@ -1,0 +1,24 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+re_extensions = v3_req
+
+[dn]
+C = SV
+ST = San Salvador
+L = San Salvador
+O = Red235
+OU = IT
+CN = articuno.com
+emailAddress = admin@articuno.com
+
+[v3_req]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = articuno.com
+DNS.2 = www.articuno.com
