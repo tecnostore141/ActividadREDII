@@ -8,5 +8,5 @@ $TTL    604800
 ;
 @       IN      NS      ns1.articuno.com.
 @       IN      A       192.168.1.111
-ns      IN      A       192.168.1.102
+ns1      IN      A       192.168.1.102
 www     IN      A       192.168.1.111
