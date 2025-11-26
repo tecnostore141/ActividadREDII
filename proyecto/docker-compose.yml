@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  # Sitio 1: Articuno (Descargado desde VM1)
+  articuno-web:
+    image: 192.168.1.102:5000/articuno:latest
+    container_name: articuno_container
+    expose:
+      - "80"
+    networks:
+      - red-proyecto
+
+  # Sitio 2: Seadra (Descargado desde VM1)
+  seadra-web:
+    image: 192.168.1.102:5000/seadra:latest
+    container_name: seadra_container
+    expose:
+      - "80"
+    networks:
+      - red-proyecto
+
+  # Proxy Reverso (Construido localmente)
+  reverse-proxy:
+    build: ./proxy
+    container_name: proxy_container
+    ports:
+      - "80:80"    # HTTP
+      - "443:443"  # HTTPS
+    depends_on:
+      - articuno-web
+      - seadra-web
+    networks:
+      - red-proyecto
+
+networks:
+  red-proyecto:
+    driver: bridge

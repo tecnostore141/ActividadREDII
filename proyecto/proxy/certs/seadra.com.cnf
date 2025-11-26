@@ -1,0 +1,25 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+req_extensions = v3_req
+
+[dn]
+C = SV
+ST = Estado
+L = San Salvador
+O = Red235
+OU = IT
+CN = seadra.com
+emailAddress = admin@seadra.com
+
+[v3_req]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = seadra.com
+DNS.2 = www.seadra.com
